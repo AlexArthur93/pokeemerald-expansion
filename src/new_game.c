@@ -48,6 +48,7 @@
 #include "constants/items.h"
 #include "difficulty.h"
 
+
 extern const u8 EventScript_ResetAllMapFlags[];
 
 static void ClearFrontierRecord(void);
@@ -211,6 +212,7 @@ void NewGameInitData(void)
     SetCurrentDifficultyLevel(DIFFICULTY_NORMAL);
     ResetItemFlags();
     ResetDexNav();
+	AddBagItem(ITEM_INFINITE_CANDY,1);
 }
 
 static void ResetMiniGamesRecords(void)
@@ -234,4 +236,6 @@ static void ResetDexNav(void)
     memset(gSaveBlock3Ptr->dexNavSearchLevels, 0, sizeof(gSaveBlock3Ptr->dexNavSearchLevels));
 #endif
     gSaveBlock3Ptr->dexNavChain = 0;
+	
 }
+
